@@ -15,3 +15,9 @@ BookHub is your ultimate digital bookshelf, seamlessly blending functionality wi
 - Explore: Check the Dashboard for reading stats and recommendations tailored just for you.
 
 # Screenshot
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/c1102543-5b0b-4a2c-b6bc-3a47f6d8ec38"  width="250" height="450">
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/25731456-cb85-4854-89dc-08cda8b51b6d"  width="250" height="450">
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/c84d0d5e-e172-4a2f-b83a-bf6a36aa954c"  width="250" height="450">
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/77b3b8cf-8bef-4e34-8387-d72d5ac9421b"  width="250" height="450">
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/91842c09-655c-45b7-b525-12cf069a58aa"  width="250" height="450">
+<img src="https://github.com/JayK0604/BookHub/assets/115945871/92f56d84-3789-4890-9ff5-779921273988"  width="250" height="450">
