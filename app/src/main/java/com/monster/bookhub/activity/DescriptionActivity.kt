@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.monster.bookhub.activity
 
 import android.app.AlertDialog
@@ -7,6 +9,7 @@ import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import androidx.appcompat.widget.Toolbar
@@ -60,6 +63,7 @@ class DescriptionActivity : AppCompatActivity() {
         toolbar = findViewById(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.title = "Book Details"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (intent != null) {
             bookId = intent.getStringExtra("book_id")
@@ -287,5 +291,16 @@ class DescriptionActivity : AppCompatActivity() {
             return false
         }
 
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home -> {
+                // Handle the back button click
+                onBackPressed()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
