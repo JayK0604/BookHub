@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.monster.bookhub.util
 
 import android.content.Context
