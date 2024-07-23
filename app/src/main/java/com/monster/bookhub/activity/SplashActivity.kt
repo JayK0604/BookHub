@@ -23,14 +23,16 @@ class SplashActivity : AppCompatActivity() {
         binding.btnStart.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val bookType = binding.etBookType.text.toString().trim()
+            val bookName = binding.etBookName.text.toString().trim()
+            val authorName = binding.etAuthorName.text.toString().trim()
 
             // Initialize Firebase
             FirebaseApp.initializeApp(this)
             database = FirebaseDatabase.getInstance().reference.child("DataBase")
 
-            if (username.isNotEmpty() && bookType.isNotEmpty()) {
+            if (username.isNotEmpty() && bookType.isNotEmpty() && bookName.isNotEmpty() && authorName.isNotEmpty()) {
                 // Save data to Firebase
-                saveUserDataToFirebase(username, bookType)
+                saveUserDataToFirebase(username, bookType, bookName, authorName)
                 // Proceed to MainActivity
                 startActivity(Intent(this, MainActivity::class.java))
                 finish()
@@ -40,13 +42,15 @@ class SplashActivity : AppCompatActivity() {
         }
     }
 
-    private fun saveUserDataToFirebase(username: String, bookType: String) {
-        val user = User(username, bookType)
+    private fun saveUserDataToFirebase(username: String, bookType: String, bookName: String, authorName: String) {
+        val user = User(username, bookType, bookName, authorName)
 
 
         database.child(username).setValue(user).addOnCompleteListener { task ->
             binding.etUsername.text.clear()
             binding.etBookType.text.clear()
+            binding.etBookName.text.clear()
+            binding.etAuthorName.text.clear()
 
             if (task.isSuccessful) {
                 Toast.makeText(this, "Data saved successfully", Toast.LENGTH_SHORT).show()

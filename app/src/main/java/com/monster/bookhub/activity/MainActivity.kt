@@ -96,7 +96,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frame, fragment)
             .commit()
-        supportActionBar?.title = "Dashboard"
+        supportActionBar?.title = "MyBooks"
         binding.navigationView.setCheckedItem(R.id.dashboard)
     }
 

@@ -10,7 +10,7 @@
     <LinearLayout
         android:id="@+id/llContent"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_height="145dp"
         android:background="#ffffff"
         android:orientation="horizontal"
         android:weightSum="6">
@@ -52,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/txtBookName"
                 android:padding="8dp"
+                android:textStyle="bold"
                 android:text="Name of the Author"
                 android:textSize="15sp" />
 
