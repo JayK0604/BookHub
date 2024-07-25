@@ -25,7 +25,8 @@
                 android:background="@drawable/background_gradient"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark"
-                app:layout_scrollFlags="scroll|enterAlways" />
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="#000000"/> <!-- to change rhe colour of the title which is shown (MyBooks, Favourite, About App, Profile)-->
 
         </com.google.android.material.appbar.AppBarLayout>
 
