@@ -12,24 +12,26 @@
         android:id="@+id/logo_image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="30dp"
+        android:contentDescription="@string/todo"
         android:src="@drawable/ic_bookhub_logo"
         app:layout_constraintBottom_toTopOf="@+id/app_name"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_default="percent"
         app:layout_constraintWidth_percent="0.5"
-        app:layout_constraintHeight_default="percent"
-        app:layout_constraintHeight_percent="0.3" />
+        tools:ignore="ImageContrastCheck,ImageContrastCheck,ImageContrastCheck" />
 
     <TextView
         android:id="@+id/app_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:gravity="center"
         android:padding="15dp"
-        android:text="Every Story Finds Its Home"
+        android:text="@string/every_story_finds_its_home"
         android:textColor="@android:color/black"
         android:textSize="32sp"
         android:textStyle="bold|italic"
@@ -44,9 +46,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
+        android:autofillHints=""
         android:background="@drawable/edit_text_background"
         android:gravity="center"
-        android:hint="Your Name"
+        android:hint="@string/your_name"
         android:padding="12dp"
         android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
@@ -57,7 +60,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/app_name"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.8"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/etBookType"
@@ -66,7 +70,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:gravity="center"
-        android:hint="Type of book you like most"
+        android:hint="@string/type_of_book_you_like_most"
         android:padding="12dp"
         android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
@@ -77,16 +81,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etUsername"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.8"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/etBookName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:autofillHints=""
         android:background="@drawable/edit_text_background"
         android:gravity="center"
-        android:hint="Title of Book"
+        android:hint="@string/title_of_book"
+        android:importantForAutofill="no"
         android:padding="12dp"
         android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
@@ -97,7 +104,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etBookType"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.8"
+        tools:ignore="VisualLintTextFieldSize" />
 
     <EditText
         android:id="@+id/etAuthorName"
@@ -106,7 +114,7 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_text_background"
         android:gravity="center"
-        android:hint="Author or Poet"
+        android:hint="@string/author_or_poet"
         android:padding="12dp"
         android:textColor="@color/text_color"
         android:textColorHint="@color/hint_color"
@@ -117,7 +125,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/etBookName"
         app:layout_constraintWidth_default="percent"
-        app:layout_constraintWidth_percent="0.8" />
+        app:layout_constraintWidth_percent="0.8"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
 
     <FrameLayout
         android:id="@+id/btnStart"
@@ -139,6 +148,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:importantForAccessibility="no"
             android:src="@drawable/baseline_start_24" />
     </FrameLayout>
 

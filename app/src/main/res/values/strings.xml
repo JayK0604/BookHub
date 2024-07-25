@@ -17,5 +17,11 @@
     <string name="action_sort">Sort</string>
     <string name="Menu">Menu\n</string>
     <string name="AboutApp">Welcome to BookHub, your ultimate destination for discovering and enjoying a diverse range of books. Our mission is to connect readers with stories that inspire, educate, and entertain. With personalized recommendations, an extensive library, and comprehensive book details, BookHub ensures you find the perfect read every time.</string>
+    <string name="every_story_finds_its_home">Every Story Finds Its Home</string>
+    <string name="author_or_poet">Author or Poet</string>
+    <string name="title_of_book">Title of Book</string>
+    <string name="type_of_book_you_like_most">Type of book you like most</string>
+    <string name="your_name">Your Name</string>
+    <string name="todo">TODO</string>
 
 </resources>
