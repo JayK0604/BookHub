@@ -20,8 +20,15 @@
     <string name="every_story_finds_its_home">Every Story Finds Its Home</string>
     <string name="author_or_poet">Author / Poet</string>
     <string name="title_of_book">Title of Book</string>
-    <string name="type_of_book_you_like_most">Category of Book</string>
+    <string name="type_of_book_you_like_most">Category of book you liked</string>
     <string name="your_name">Your Name</string>
     <string name="todo">TODO</string>
+    <string name="name_of_the_book">Name Of The Book</string>
+    <string name="name_of_the__book">Name of the book</string>
+    <string name="rs_299">Rs. 299</string>
+    <string name="name_of_the_author">Name of the Author</string>
+    <string name="_4_5">4.5</string>
+    <string name="image">Image</string>
+    <string name="name_of_the___book">Name of the book</string>
 
 </resources>

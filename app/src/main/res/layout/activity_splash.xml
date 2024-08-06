@@ -141,6 +141,7 @@
         android:layout_marginTop="52dp"
         android:background="@drawable/custom_button"
         android:padding="12dp"
+        android:contentDescription="Start Button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_default="wrap"
         app:layout_constraintHeight_percent="0.1"

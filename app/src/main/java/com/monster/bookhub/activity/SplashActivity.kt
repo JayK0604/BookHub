@@ -30,6 +30,9 @@ class SplashActivity : AppCompatActivity() {
         // Set up the Enter key action for EditText fields
         setupEditTextListeners()
 
+        // Set content description for accessibility
+        binding.btnStart.contentDescription = "Start Button"
+
         binding.btnStart.setOnClickListener {
             val username = binding.etUsername.text.toString().trim()
             val bookType = binding.etBookType.text.toString().trim()

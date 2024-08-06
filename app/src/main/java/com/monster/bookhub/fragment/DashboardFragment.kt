@@ -1,6 +1,5 @@
 package com.monster.bookhub.fragment
 
-
 import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
@@ -31,19 +30,14 @@ import kotlin.collections.HashMap
 class DashboardFragment : Fragment() {
 
     lateinit var recyclerDashboard: RecyclerView
-
     lateinit var layoutManager: RecyclerView.LayoutManager
-
     lateinit var recyclerAdapter: DashboardRecyclerAdapter
-
     lateinit var progressLayout: RelativeLayout
-
     lateinit var progressBar: ProgressBar
 
     val bookInfoList = arrayListOf<Book>()
 
-    var ratingComparator = Comparator<Book>{book1, book2 ->
-
+    var ratingComparator = Comparator<Book> { book1, book2 ->
         if (book1.bookRating.compareTo(book2.bookRating, true) == 0) {
             // sort according to name if rating is same
             book1.bookName.compareTo(book2.bookName, true)
@@ -57,27 +51,24 @@ class DashboardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
         val view = inflater.inflate(R.layout.fragment_dashboard, container, false)
 
         setHasOptionsMenu(true)
 
         recyclerDashboard = view.findViewById(R.id.recyclerDashboard)
-
         progressLayout = view.findViewById(R.id.progressLayout)
-
         progressBar = view.findViewById(R.id.progressBar)
-
         progressLayout.visibility = View.VISIBLE
 
         layoutManager = LinearLayoutManager(activity)
-
+        recyclerAdapter = DashboardRecyclerAdapter(activity as Context, bookInfoList)
+        recyclerDashboard.adapter = recyclerAdapter
+        recyclerDashboard.layoutManager = layoutManager
 
         val queue = Volley.newRequestQueue(activity as Context)
-
         val url = "http://13.235.250.119/v1/book/fetch_books/"
 
-        if (ConnectionManager().checkConnectivity(activity as Context)){
+        if (ConnectionManager().checkConnectivity(activity as Context)) {
             val jsonObjectRequest = object : JsonObjectRequest(Request.Method.GET, url, null, Response.Listener {
 
                 // Here we will handle the response
@@ -85,10 +76,9 @@ class DashboardFragment : Fragment() {
                     progressLayout.visibility = View.GONE
                     val success = it.getBoolean("success")
 
-                    if (success){
-
+                    if (success) {
                         val data = it.getJSONArray("data")
-                        for (i in 0 until data.length()){
+                        for (i in 0 until data.length()) {
                             val bookJsonObject = data.getJSONObject(i)
                             val bookObject = Book(
                                 bookJsonObject.getString("book_id"),
@@ -99,14 +89,8 @@ class DashboardFragment : Fragment() {
                                 bookJsonObject.getString("image")
                             )
                             bookInfoList.add(bookObject)
-                            recyclerAdapter = DashboardRecyclerAdapter(activity as Context, bookInfoList)
-
-                            recyclerDashboard.adapter = recyclerAdapter
-
-                            recyclerDashboard.layoutManager = layoutManager
-
                         }
-
+                        recyclerAdapter.notifyDataSetChanged()
                     } else {
                         Toast.makeText(activity as Context, "Some Error Occurred!", Toast.LENGTH_SHORT).show()
                     }
@@ -116,12 +100,12 @@ class DashboardFragment : Fragment() {
 
             }, Response.ErrorListener {
 
-                //Here we will handle the errors
-                if (activity != null){
+                // Here we will handle the errors
+                if (activity != null) {
                     Toast.makeText(activity as Context, "Volley error occurred!", Toast.LENGTH_SHORT).show()
                 }
 
-            }){
+            }) {
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers = HashMap<String, String>()
                     headers["Content-type"] = "application/json"
@@ -130,20 +114,18 @@ class DashboardFragment : Fragment() {
                 }
             }
 
-
             queue.add(jsonObjectRequest)
-
         } else {
             val dialog = AlertDialog.Builder(activity as Context)
             dialog.setTitle("Error")
             dialog.setMessage("Internet Connection is not Found")
-            dialog.setPositiveButton("Open Settings"){text, listener ->
+            dialog.setPositiveButton("Open Settings") { text, listener ->
                 val settingsIntent = Intent(Settings.ACTION_WIRELESS_SETTINGS)
                 startActivity(settingsIntent)
                 activity?.finish()
             }
 
-            dialog.setNegativeButton("Exit") {text, listener ->
+            dialog.setNegativeButton("Exit") { text, listener ->
                 ActivityCompat.finishAffinity(activity as Activity)
             }
             dialog.create()
@@ -153,21 +135,19 @@ class DashboardFragment : Fragment() {
         return view
     }
 
-
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater?.inflate(R.menu.menu_dashboard, menu)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         val id = item?.itemId
-        if (id == R.id.action_sort){
+        if (id == R.id.action_sort) {
             Collections.sort(bookInfoList, ratingComparator)
             bookInfoList.reverse()
+            recyclerAdapter.notifyDataSetChanged()
         }
-
-        recyclerAdapter.notifyDataSetChanged()
-
         return super.onOptionsItemSelected(item)
     }
 }

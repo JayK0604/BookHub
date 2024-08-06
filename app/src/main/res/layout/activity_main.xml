@@ -45,7 +45,9 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/drawer_header"
         app:menu="@menu/menu_drawer"
-        tools:ignore="VisualLintBounds" />
+        tools:ignore="VisualLintBounds"
+        app:itemTextColor="#000000"
+        app:itemTextAppearanceActiveBoldEnabled="true"/>
 </androidx.drawerlayout.widget.DrawerLayout>
 
 

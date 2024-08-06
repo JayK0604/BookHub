@@ -39,6 +39,7 @@
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1.5"
+                    android:contentDescription="@string/image"
                     android:padding="10dp"
                     android:scaleType="centerCrop"
                     android:src="@mipmap/ic_launcher" />
@@ -53,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="4dp"
-                        android:text="Name of the book"
+                        android:text="@string/name_of_the___book"
                         android:textColor="#000000"
                         android:textSize="18sp"
                         android:textStyle="bold" />
@@ -136,7 +137,7 @@
         android:layout_alignParentBottom="true"
         android:background="@drawable/background_gradient"
         android:text="@string/add_to_favourites"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="19sp"
         android:textStyle="bold" />
 

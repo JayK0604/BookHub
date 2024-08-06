@@ -2,7 +2,6 @@ package com.monster.bookhub.activity
 
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -26,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         setUpToolbar()
 
         openDashboard()
+
 
         val actionBarDrawerToggle = ActionBarDrawerToggle(
             this,
@@ -101,6 +101,7 @@ class MainActivity : AppCompatActivity() {
         binding.navigationView.setCheckedItem(R.id.dashboard)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         val frag = supportFragmentManager.findFragmentById(R.id.frame)
         if (frag !is DashboardFragment) {
